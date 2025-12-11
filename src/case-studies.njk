@@ -1,0 +1,32 @@
+---
+layout: base.njk
+title: Case Studies
+description: Portfolio of UX and interaction design projects
+---
+
+<section class="case-studies-page">
+  <div class="container">
+    <h1>Case Studies</h1>
+    <p class="page-intro">A selection of projects showcasing my approach to UX and interaction design, from research to implementation.</p>
+    
+    <div class="case-studies-list">
+      {% for study in collections.caseStudies %}
+      <article class="case-study-item">
+        <h2><a href="{{ study.url }}">{{ study.data.title }}</a></h2>
+        {% if study.data.client %}
+        <p class="client">Client: {{ study.data.client }}</p>
+        {% endif %}
+        <p class="description">{{ study.data.description }}</p>
+        {% if study.data.tags %}
+        <ul class="tags" aria-label="Project tags for {{ study.data.title }}">
+          {% for tag in study.data.tags %}
+          <li><span class="tag">{{ tag }}</span></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <a href="{{ study.url }}" class="read-more" aria-label="Read case study about {{ study.data.title }}">Read case study →</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

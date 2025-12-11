@@ -1,0 +1,16 @@
+{
+  "name": "ux-consultant-portfolio",
+  "version": "1.0.0",
+  "description": "UX and Interaction Design Portfolio",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "keywords": ["eleventy", "portfolio", "ux", "design"],
+  "author": "Alex Colbeck",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

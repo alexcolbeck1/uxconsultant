@@ -1,0 +1,32 @@
+---
+layout: base.njk
+---
+
+<article class="case-study">
+  <header class="case-study-header">
+    <h1>{{ title }}</h1>
+    {% if client %}
+    <p class="client">Client: {{ client }}</p>
+    {% endif %}
+    {% if date %}
+    <p class="date">
+      <time datetime="{{ date }}">{{ date | readableDate }}</time>
+    </p>
+    {% endif %}
+    {% if tags %}
+    <ul class="tags" aria-label="Project tags">
+      {% for tag in tags %}
+      <li><span class="tag">{{ tag }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </header>
+
+  <div class="case-study-content">
+    {{ content | safe }}
+  </div>
+
+  <nav class="case-study-nav" aria-label="Case study navigation">
+    <a href="/case-studies/" class="back-link">← Back to all case studies</a>
+  </nav>
+</article>

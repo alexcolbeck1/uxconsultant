@@ -1,0 +1,60 @@
+---
+layout: base.njk
+title: Home
+description: UX and Interaction Design services. Creating accessible, user-centered digital experiences.
+---
+
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-content">
+    <h1 id="hero-heading">UX & Interaction Design</h1>
+    <p class="hero-subtitle">Creating accessible, user-centered digital experiences that solve real problems.</p>
+    <a href="/case-studies/" class="cta-button">View My Work</a>
+  </div>
+</section>
+
+<section class="services" aria-labelledby="services-heading">
+  <div class="container">
+    <h2 id="services-heading">Services</h2>
+    <div class="services-grid">
+      <article class="service-card">
+        <h3>User Research</h3>
+        <p>Understanding user needs through interviews, testing, and analysis to inform design decisions.</p>
+      </article>
+      <article class="service-card">
+        <h3>Interaction Design</h3>
+        <p>Designing intuitive interfaces and interactions that delight users and achieve business goals.</p>
+      </article>
+      <article class="service-card">
+        <h3>Accessibility</h3>
+        <p>Ensuring digital products are usable by everyone, meeting WCAG standards and best practices.</p>
+      </article>
+      <article class="service-card">
+        <h3>Prototyping</h3>
+        <p>Creating interactive prototypes to test ideas and validate solutions before development.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="featured-work" aria-labelledby="work-heading">
+  <div class="container">
+    <h2 id="work-heading">Featured Case Studies</h2>
+    <div class="case-studies-grid">
+      {% for study in collections.caseStudies | limit(3) %}
+      <article class="case-study-card">
+        <h3><a href="{{ study.url }}">{{ study.data.title }}</a></h3>
+        <p>{{ study.data.description }}</p>
+        {% if study.data.tags %}
+        <ul class="tags" aria-label="Project tags for {{ study.data.title }}">
+          {% for tag in study.data.tags %}
+          <li><span class="tag">{{ tag }}</span></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <a href="{{ study.url }}" class="read-more" aria-label="Read more about {{ study.data.title }}">Read case study →</a>
+      </article>
+      {% endfor %}
+    </div>
+    <a href="/case-studies/" class="view-all">View all case studies →</a>
+  </div>
+</section>
