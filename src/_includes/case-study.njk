@@ -3,15 +3,16 @@ layout: base.njk
 ---
 
 <article class="case-study">
+  {% if heroImage %}
+  <div class="case-study-hero">
+    <img src="{{ heroImage }}" alt="{{ heroImageAlt or title }}" />
+  </div>
+  {% endif %}
+  
   <header class="case-study-header">
     <h1>{{ title }}</h1>
     {% if client %}
     <p class="client">Client: {{ client }}</p>
-    {% endif %}
-    {% if date %}
-    <p class="date">
-      <time datetime="{{ date }}">{{ date | readableDate }}</time>
-    </p>
     {% endif %}
     {% if tags %}
     <ul class="tags" aria-label="Project tags">

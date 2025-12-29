@@ -1,0 +1,21 @@
+{#
+  Captioned Image Component
+  Based on NHS Design System image component pattern
+  
+  Usage:
+  {% from "captioned-image.njk" import captionedImage %}
+  {{ captionedImage({
+    src: "/images/example.png",
+    alt: "Detailed description of the image for screen readers",
+    caption: "Brief explanation of what to conclude from the image."
+  }) }}
+#}
+
+{% macro captionedImage(params) %}
+<figure class="captioned-image" role="figure"{% if params.caption %} aria-labelledby="caption-{{ params.src | replace('/', '-') | replace('.', '-') }}"{% endif %}>
+  <img src="{{ params.src }}" alt="{{ params.alt }}"{% if params.width %} width="{{ params.width }}"{% endif %}{% if params.height %} height="{{ params.height }}"{% endif %} loading="lazy" />
+  {% if params.caption %}
+  <figcaption id="caption-{{ params.src | replace('/', '-') | replace('.', '-') }}">{{ params.caption }}</figcaption>
+  {% endif %}
+</figure>
+{% endmacro %}

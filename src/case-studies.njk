@@ -12,19 +12,28 @@ description: Portfolio of UX and interaction design projects
     <div class="case-studies-list">
       {% for study in collections.caseStudies %}
       <article class="case-study-item">
-        <h2><a href="{{ study.url }}">{{ study.data.title }}</a></h2>
-        {% if study.data.client %}
-        <p class="client">Client: {{ study.data.client }}</p>
+        {% if study.data.heroImage %}
+        <div class="case-study-thumbnail">
+          <a href="{{ study.url }}" aria-hidden="true" tabindex="-1">
+            <img src="{{ study.data.heroImage }}" alt="{{ study.data.heroImageAlt or study.data.title }}" loading="lazy" />
+          </a>
+        </div>
         {% endif %}
-        <p class="description">{{ study.data.description }}</p>
-        {% if study.data.tags %}
-        <ul class="tags" aria-label="Project tags for {{ study.data.title }}">
-          {% for tag in study.data.tags %}
-          <li><span class="tag">{{ tag }}</span></li>
-          {% endfor %}
-        </ul>
-        {% endif %}
-        <a href="{{ study.url }}" class="read-more" aria-label="Read case study about {{ study.data.title }}">Read case study →</a>
+        <div class="case-study-text">
+          <h2><a href="{{ study.url }}">{{ study.data.title }}</a></h2>
+          {% if study.data.client %}
+          <p class="client">Client: {{ study.data.client }}</p>
+          {% endif %}
+          <p class="description">{{ study.data.description }}</p>
+          {% if study.data.tags %}
+          <ul class="tags" aria-label="Project tags for {{ study.data.title }}">
+            {% for tag in study.data.tags %}
+            <li><span class="tag">{{ tag }}</span></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          <a href="{{ study.url }}" class="read-more" aria-label="Read case study about {{ study.data.title }}">Read case study →</a>
+        </div>
       </article>
       {% endfor %}
     </div>
