@@ -5,12 +5,13 @@ client: NHS England
 description: Leading interaction design for a national platform enabling NHS organisations to message patients.
 order: 6
 heroImage: /images/hero-nhs.png
-heroImageAlt: NHS Notify digital service interface
+heroImageAlt: 
 tags:
   - Healthcare
-  - Public Sector
-  - Service Design
-  - Platform Design
+  - Public sector
+  - Service design
+  - Platform design
+draft: true
 ---
 
 ## Overview
