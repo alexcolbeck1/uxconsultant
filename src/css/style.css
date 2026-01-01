@@ -847,6 +847,10 @@ footer p {
   .case-studies-grid {
     grid-template-columns: 1fr;
   }
+
+  .service-card {
+    text-align: center;
+  }
   
   .case-study-content {
     font-size: var(--font-size-base);
