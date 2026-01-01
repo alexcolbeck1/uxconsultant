@@ -837,6 +837,11 @@ footer p {
   .hero {
     padding: var(--spacing-xl) var(--spacing-md);
   }
+
+  .cta-button {
+    font-size: var(--font-size-base);
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
   
   .services-grid,
   .case-studies-grid {
