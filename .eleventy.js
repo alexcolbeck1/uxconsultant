@@ -7,6 +7,7 @@ module.exports = function(eleventyConfig) {
   // Create case studies collection
   eleventyConfig.addCollection("caseStudies", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/case-studies/*.md")
+      .filter(item => !item.data.draft) // Exclude drafts
       .sort((a, b) => {
         return (a.data.order || 999) - (b.data.order || 999);
       });
