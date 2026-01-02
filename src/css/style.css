@@ -829,6 +829,10 @@ footer p {
     width: 100%;
   }
 
+  .logo{
+    font-size: var(--font-size-large);
+  }
+
   /* Show menu when checkbox is checked */
   .menu-toggle:checked ~ .nav-menu {
     display: flex;
